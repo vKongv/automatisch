@@ -3,7 +3,7 @@ services:
     name: automatisch-main
     repo: https://github.com/vkongv/automatisch
     region: singapore
-    plan: free # optional (defaults to starter instance type)
+    plan: free
     branch: main
     env: docker
     dockerfilePath: ./docker/Dockerfile
@@ -48,10 +48,13 @@ services:
       - fromGroup: common-env-vars
   - type: worker
     name: automatisch-worker
+    repo: https://github.com/vkongv/automatisch
+    region: singapore
+    plan: free
+    branch: main
     env: docker
     dockerfilePath: ./docker/Dockerfile
     dockerContext: ./docker
-    repo: https://github.com/automatisch/automatisch
     autoDeploy: false
     envVars:
       - key: WORKER
@@ -94,6 +97,7 @@ services:
       - fromGroup: common-env-vars
   - type: redis
     name: automatisch-redis
+    plan: free
     ipAllowList: [] # allow only internal connections
     maxmemoryPolicy: noeviction
 databases:
