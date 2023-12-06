@@ -3,7 +3,7 @@ services:
     name: automatisch-main
     repo: https://github.com/vkongv/automatisch
     region: singapore
-    plan: starter # optional (defaults to starter instance type)
+    plan: free # optional (defaults to starter instance type)
     branch: main
     env: docker
     dockerfilePath: ./docker/Dockerfile
